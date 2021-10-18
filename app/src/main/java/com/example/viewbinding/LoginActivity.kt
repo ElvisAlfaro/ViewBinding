@@ -12,8 +12,16 @@ class LoginActivity : AppCompatActivity() {
         val loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(loginBinding.root)
 
-        loginBinding.btnLogin.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+        loginBinding.apply {
+            btnLogin.setOnClickListener {
+                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            }
+            btnOpenFragment.setOnClickListener {
+                supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                    .add(R.id.fc_demo, DemmoFragment.newInstance())
+                    .commit()
+            }
         }
     }
 }

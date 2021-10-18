@@ -29,4 +29,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login" />
+
+    <Button
+        android:id="@+id/btn_open_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="abrir fragment"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fc_demo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>
